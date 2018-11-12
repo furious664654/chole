@@ -13,7 +13,7 @@ bot.login(process.env.TOKEN);
 
 bot.on('message',message => {
     if (message.content === prefix + "help"){
-        message.channel.sendMessage("Liste des commande : \n ```commande d'aide``` *help \n *info \n *serv ");
+        message.channel.sendMessage("Liste des commande : \n ```commande d'aide``` *help \n *info \n *serv \n ```commande de moderation``` \n *kick \n *ban");
     }
 
     if (message.content === "Salut"){
