@@ -33,6 +33,8 @@ bot.on('message',message => {
 
 bot.on("guildMemberAdd", member => {
    member.guild.channels.find("name", "generale").send(`Bienvenue ${member} dans la MGFA amuse toi bien`);
+})
+
 });
 
 
