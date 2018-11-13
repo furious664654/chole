@@ -15,13 +15,13 @@ bot.on('message', message => {
     const args = message.content.slice(prefix.lenght).split(/ +/)
     command = args.shift().toLowerCase();
 
-    if (command === "kick") {
+    if (command === prefix + "kick") {
         let modRole = message.guild.roles.find("name", "STAFFPERM");
         if (!message.member.roles.has(modRole.id)) {
             return message.reply("Tu n'as pas la permission de faire cette commande !").catch(console.error);        
         }
         if(message.mentions.users.size === 0) {
-            return message.reply("Merci de mentionner l'utulisateur à expulser.").catch(console.error);
+            return message.reply("Merci de mentionner l'utilisateur à expulser.").catch(console.error);
         }
         let kickMember = message.guild.member(message.mentions.users.first());
         if(!kickMember) {
@@ -36,13 +36,13 @@ bot.on('message', message => {
         }).catch(console.error)
     }
 
-    if (command === "ban") {
+    if (command === prefix + "ban") {
         let modRole = message.guild.roles.find("name", "STAFFPERM");
         if(message.member.roles.has(modRole.id)) {
             return message.reply("Tu n'as pas la permission de faire cette commande !").catch(console.error);
         }
         const member = message.mentions.members.first();
-        if (!member) return message.reply("Merci de mentionner l'utulisateur à bannir !");
+        if (!member) return message.reply("Merci de mentionner l'utilisateur à bannir !");
         member.ban().then(member => {
             message.reply(`${member.user.username} a été banni avec succès !`).catch(console.error);
             message.guild.channels.find("name", "general").send(`**${member.user.username} a été banni du discord par **${message.author.username}**`)
@@ -51,7 +51,7 @@ bot.on('message', message => {
 
 bot.on('message',message => {
     if (message.content === prefix + "help"){
-        message.channel.sendMessage("Liste des commande : \n ```commande d'aide``` *help \n *info \n *serv");
+        message.channel.sendMessage("Liste des commande : \n ***commande d'aide** *help \n *info \n *serv \n **commande de moderation** \n *kick \n *ban");
     }
 
     if (message.content === "Salut"){
