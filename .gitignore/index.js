@@ -83,9 +83,6 @@ bot.on('message',message => {
         message.reply("le lien pour node est :  https://nodejs.org/fr/ ");
         console.log("Commande effectué");
     }
-
-})
-
 });
 
 
