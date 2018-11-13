@@ -51,7 +51,7 @@ bot.on('message', message => {
 
 bot.on('message',message => {
     if (message.content === prefix + "help"){
-        message.channel.sendMessage("Liste des commande : \n ***commande d'aide** \n *help \n *info \n *serv \n **commande de moderation** \n *kick \n *ban \n **commande de lien** \n *VSC \n *invite");
+        message.channel.sendMessage("Liste des commande : \n ***commande d'aide** \n *help : affiche les commande du bot \n *info : affiche les info du bot \n *serv : affiche les info du serveur \n **commande de moderation** \n *kick : permet de kick des membre \n *ban : permet de bannir des membre \n **commande de lien** \n *VSC \n *invite \n *node");
     }
 
     if (message.content === "Salut"){
@@ -65,7 +65,7 @@ bot.on('message',message => {
     }
 
     if (message.content === prefix + "serv"){
-        message.reply(" MEGA GHOST FUFU \n proprietaire : fufu \n co-proprietaire BTS fan et Banana")
+        message.reply(" :MEGAGHOSTFUFUSIGN: MEGA GHOST FUFU \n :bust_in_silhouette:  proprietaire : fufu \n :busts_in_silhouette: co-proprietaire BTS fan et Banana")
         console.log("Commande effectué");
     }
 
@@ -74,7 +74,16 @@ bot.on('message',message => {
         console.log("Commande effectué");
     }
 
-bot.on
+    if (message.content === prefix + "VSC"){
+        message.reply("le lien pour visual studio code est :  https://code.visualstudio.com/");
+        console.log("Commande effectué");
+    }
+
+    if (message.content === prefix + "node"){
+        message.reply("le lien pour node est :  https://nodejs.org/fr/ ");
+        console.log("Commande effectué");
+    }
+
 })
 
 });
