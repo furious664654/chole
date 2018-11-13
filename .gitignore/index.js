@@ -51,7 +51,7 @@ bot.on('message', message => {
 
 bot.on('message',message => {
     if (message.content === prefix + "help"){
-        message.channel.sendMessage("Liste des commande : \n ***commande d'aide** *help \n *info \n *serv \n **commande de moderation** \n *kick \n *ban");
+        message.channel.sendMessage("Liste des commande : \n ***commande d'aide** \n *help \n *info \n *serv \n **commande de moderation** \n *kick \n *ban \n **commande de lien** \n *VSC \n *invite");
     }
 
     if (message.content === "Salut"){
@@ -69,8 +69,12 @@ bot.on('message',message => {
         console.log("Commande effectué");
     }
 
-bot.on("guildMemberAdd", member => {
-   member.guild.channels.find("name", "generale").send(`Bienvenue ${member} dans la MGFA amuse toi bien`);
+    if (message.content === prefix + "invite"){
+        message.reply("l'invitation du discord est https://discord.gg/DVbUwKu");
+        console.log("Commande effectué");
+    }
+
+bot.on
 })
 
 });
