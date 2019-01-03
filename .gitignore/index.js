@@ -39,7 +39,7 @@ bot.on('message', message => {
     if (command === prefix + "ban") {
         let modRole = message.guild.roles.find("name", "STAFFPERM");
         if(message.member.roles.has(modRole.id)) {
-            return message.reply("Tu n'as pas la permission de faire cette commande !").catch(console.error);
+            return message.reply("Vous n'avez pas la permission de faire cette commande !").catch(console.error);
         }
         const member = message.mentions.members.first();
         if (!member) return message.reply("Merci de mentionner l'utilisateur à bannir !");
@@ -51,7 +51,7 @@ bot.on('message', message => {
 
 bot.on('message',message => {
     if (message.content === prefix + "help"){
-        message.channel.sendMessage("Liste des commande : \n ***commande d'aide** \n *help : affiche les commande du bot \n *info : affiche les info du bot \n *serv : affiche les info du serveur \n **commande de moderation** \n *kick : permet de kick des membre \n *ban : permet de bannir des membre \n **commande de lien** \n *VSC \n *invite \n *node");
+        message.channel.sendMessage("Liste des commande : \n ***commande d'aide** \n *help : affiche les commande du bot \n *info : affiche les info du bot \n *serv : affiche les info du serveur \n **commande de moderation** \n *kick : permet de kick des membre \n *ban : permet de bannir des membre \n **commande de lien** \n *VSC \n *invite \n *node \n ***ATTENTION LE BOT EST ENCORE EN DEVVELLOPEMENT ET PRESENTE ENCORE BEAUCOUP D'ERREURS");
     }
 
     if (message.content === "Salut"){
